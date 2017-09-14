@@ -15,15 +15,13 @@ npm config set prefix=~/node
 First install gulp globally on your machine
 npm install --global gulp-cli
 
-
-Then in the terminal type CD then drop this folder in. Then hit enter and run the following commands in this order:
+Then in the terminal type cd then drop this folder in. Then hit enter and run the following commands in this order:
 
 npm init
 
 npm install --save-dev gulp
 
 npm install gulp-sass --save-dev
-
 
 In order to use the Gulp to compile sass run in the terminal the following command
  ~/node/bin/gulp sass
