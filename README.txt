@@ -18,7 +18,6 @@ npm install --global gulp-cli
 
 Then in the terminal type CD then drop this folder in. Then hit enter and run the following commands in this order:
 
-
 npm init
 
 npm install --save-dev gulp
