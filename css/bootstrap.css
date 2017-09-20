@@ -5986,6 +5986,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   .hidden-print {
     display: none !important; } }
 
+* {
+  margin: 0; }
+
 body {
   width: 100%;
   height: 100vh;
@@ -6016,6 +6019,11 @@ body {
     margin: auto;
     height: 4em;
     display: flex; }
+  .enter__link {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    color: #000; }
   .enter__header {
     font-size: 1.25em;
     padding-top: 1em;
@@ -6029,3 +6037,15 @@ body {
     height: 2em;
     width: 2.5em;
     transform: rotate(270deg); }
+
+.header {
+  width: 100%;
+  height: 3em;
+  border-bottom: 1px solid #000; }
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 5em;
+  border: 1px solid #000; }
