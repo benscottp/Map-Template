@@ -1,10 +1,58 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: rgba(1, 0, 0, 0);
+  background-color: #fff;
 }
 
 .frontpage-container {
   width: 100%;
   height: 100vh;
+}
+
+
+.logo {
+  position: relative;
+  top: 20%;
+
+  &__img {
+    padding-top: 10em;
+    width: 20em;
+  background-image: url(../img/logo.svg);
+  background-size: cover;
+  margin: auto;
+  }
+
+  &__header {
+    text-align: center;
+  }
+}
+
+.enter {
+  position: relative;
+  top: 45%;
+
+    &__button {
+      border: 1px solid #000;
+      width: 22em;
+      margin: auto;
+      height: 4em;
+      display: flex;
+    }
+
+    &__header {
+      font-size: 1.25em;
+       padding-top: 1em;
+       padding-left: 1em;
+       flex: 0 0 88%;
+           text-transform: uppercase;
+    }
+
+    &__arrow {
+      background-image: url(../img/arrow.svg);
+      background-size: cover;
+      margin-top: 1em;
+      height: 2em;
+      width: 2.5em;
+      transform: rotate(270deg);
+    }
 }
