@@ -5,6 +5,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+@import "extend";
+
 // Core variables and mixins
 @import "custom";
 @import "variables";
@@ -53,3 +55,5 @@
 
 // Utility classes
 @import "utilities";
+
+@import "extend";
