@@ -128,20 +128,24 @@ body {
 
         &--motel {
             mask-image: url(../img/bed.svg);
+            -webkit-mask-image: url(../img/bed.svg);
             background-color: #128782;
         }
 
         &--food {
           mask-image: url(../img/food.svg);
+            -webkit-mask-image: url(../img/food.svg);
           background-color: #37608E;
         }
 
         &--scenic{
           mask-image: url(../img/camera.svg);
+            -webkit-mask-image: url(../img/camera.svg);
           background-color: #F66F64;
         }
         &--saved {
           mask-image: url(../img/star.svg);
+            -webkit-mask-image: url(../img/star.svg);
           background-color: #fcb148;
         }
     }
