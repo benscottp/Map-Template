@@ -36,13 +36,39 @@
         //... other options
     });
 
-    var markerIcon = L.icon({
-       iconUrl: '../img/pin.svg',
-        iconSize:     [60, 95],
-        iconAnchor:   [30, 40], // point of the icon which will correspond to marker's location
 
-    })
+var foodIcon = L.divIcon({
+  className: 'mapIcon mapIcon--food',
+  iconSize: [70, 70],
+  html: '<div class="mapIcon__image mapIcon__image--food"></div>'
+});
 
+var motelIcon = L.divIcon({
+  className: 'mapIcon mapIcon--motel',
+  iconSize: [70, 70],
+  html: '<div class="mapIcon__image mapIcon__image--motel"></div>'
+});
+
+var scenicIcon = L.divIcon({
+  className: 'mapIcon mapIcon--scenic',
+  iconSize: [70, 70],
+  html: '<div class="mapIcon__image mapIcon__image--scenic"></div>'
+});
+
+var savedIcon = L.divIcon({
+  className: 'mapIcon mapIcon--saved',
+  iconSize: [70, 70],
+  html: '<div class="mapIcon__image mapIcon__image--saved"></div>'
+});
+
+
+    // var markerIcon = L.icon({
+    //    iconUrl: '../img/pin.svg',
+    //     iconSize:     [60, 95],
+    //     iconAnchor:   [30, 40], // point of the icon which will correspond to marker's location
+    //
+    // })
+    //
 
 
 
@@ -80,7 +106,7 @@
   function onLocationFound(e) {
     var radius = e.accuracy * 5;
 
-    L.marker((e.latlng),{icon:markerIcon}).addTo(map)
+    L.marker((e.latlng),{icon:motelIcon}).addTo(map)
         .bindPopup( username + "'s position").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);

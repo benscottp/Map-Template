@@ -3,6 +3,13 @@
   background-size: cover;
 }
 
+@mixin mapMarker {
+  height: 5em;
+  width: 7em;
+  background-color: #fff;
+  position: absolute;
+  top: 0.3em;
+}
 
 * {
   margin: 0;
@@ -183,7 +190,66 @@ z-index: 999;
     }
 }
 
+.mapIcon {
+  height: 20em;
+  width: 20em;
+  border-radius: 20em;
+
+    &--food {
+      background-color: #37608E;
+    }
+
+    &--motel {
+      background-color: #128782;
+    }
+
+    &--scenic {
+      background-color: #F66F64;
+    }
+
+    &--saved {
+        background-color: #fcb148;
+    }
+
+  &__image {
+    @include mapMarker;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+
+      &--food {
+        mask-image: url(../img/food.svg);
+        -webkit-mask-image: url(../img/food.svg);
+      }
+
+
+      &--motel {
+        mask-image: url(../img/bed.svg);
+        -webkit-mask-image: url(../img/bed.svg);
+        left: -0.185em;
+      }
+
+      &--scenic {
+        mask-image: url(../img/camera.svg);
+          -webkit-mask-image: url(../img/camera.svg);
+          height: 4.6em;
+          top: 0.5em;
+          width: 6em;
+
+      }
+
+      &--saved {
+        mask-image: url(../img/star.svg);
+       -webkit-mask-image: url(../img/star.svg);
+       left: -0.1em;
+      }
+
+  }
+}
+
 .hide {
+  height: 20em;
+  height: 20em;
   display: none;
 }
 

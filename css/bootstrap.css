@@ -6120,7 +6120,47 @@ body {
       -webkit-mask-image: url(../img/star.svg);
       background-color: #fcb148; }
 
+.mapIcon {
+  height: 20em;
+  width: 20em;
+  border-radius: 20em; }
+  .mapIcon--food {
+    background-color: #37608E; }
+  .mapIcon--motel {
+    background-color: #128782; }
+  .mapIcon--scenic {
+    background-color: #F66F64; }
+  .mapIcon--saved {
+    background-color: #fcb148; }
+  .mapIcon__image {
+    height: 5em;
+    width: 7em;
+    background-color: #fff;
+    position: absolute;
+    top: 0.3em;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat; }
+    .mapIcon__image--food {
+      mask-image: url(../img/food.svg);
+      -webkit-mask-image: url(../img/food.svg); }
+    .mapIcon__image--motel {
+      mask-image: url(../img/bed.svg);
+      -webkit-mask-image: url(../img/bed.svg);
+      left: -0.185em; }
+    .mapIcon__image--scenic {
+      mask-image: url(../img/camera.svg);
+      -webkit-mask-image: url(../img/camera.svg);
+      height: 4.6em;
+      top: 0.5em;
+      width: 6em; }
+    .mapIcon__image--saved {
+      mask-image: url(../img/star.svg);
+      -webkit-mask-image: url(../img/star.svg);
+      left: -0.1em; }
+
 .hide {
+  height: 20em;
+  height: 20em;
   display: none; }
 
 #map {
