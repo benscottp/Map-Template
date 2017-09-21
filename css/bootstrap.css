@@ -6080,15 +6080,19 @@ body {
     width: 4em; }
     .footer__icon--motel {
       mask-image: url(../img/bed.svg);
+      -webkit-mask-image: url(../img/bed.svg);
       background-color: #128782; }
     .footer__icon--food {
       mask-image: url(../img/food.svg);
+      -webkit-mask-image: url(../img/food.svg);
       background-color: #37608E; }
     .footer__icon--scenic {
       mask-image: url(../img/camera.svg);
+      -webkit-mask-image: url(../img/camera.svg);
       background-color: #F66F64; }
     .footer__icon--saved {
       mask-image: url(../img/star.svg);
+      -webkit-mask-image: url(../img/star.svg);
       background-color: #fcb148; }
 
 .hide {
