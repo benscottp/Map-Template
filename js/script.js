@@ -36,6 +36,13 @@
         //... other options
     });
 
+    var markerIcon = L.icon({
+       iconUrl: '../img/pin.svg',
+        iconSize:     [60, 95],
+        iconAnchor:   [30, 40], // point of the icon which will correspond to marker's location
+
+    })
+
 
 
 
@@ -73,7 +80,7 @@
   function onLocationFound(e) {
     var radius = e.accuracy * 5;
 
-    L.marker(e.latlng).addTo(map)
+    L.marker((e.latlng),{icon:markerIcon}).addTo(map)
         .bindPopup( username + "'s position").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
@@ -88,7 +95,7 @@
                   corner2 = L.latLng(-36.912724, 174.816856),
                   bounds = L.latLngBounds(corner1, corner2);
 
-                map.setMaxBounds(bounds);
+                // map.setMaxBounds(bounds);
 
                   var lat = -36.848461
                   var lon = 174.763336
