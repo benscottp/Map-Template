@@ -1,5 +1,8 @@
 (function(){
 
+  var username = 'tamari';
+
+
 
   // Initialize Firebase
   var config = {
@@ -16,32 +19,8 @@
 
   var geoFire = new GeoFire(firebaseRef);
 
-  var getLocation = function() {
-  if (typeof navigator !== "undefined" && typeof navigator.geolocation !== "undefined") {
-    console.log("getting location");
-    navigator.geolocation.getCurrentPosition( geolocationCallback);
-    map.locate({setView: true, maxZoom: 16});
-  } else {
-    console.log("rats.")
-  }
-};
-
-var geolocationCallback = function(location) {
-  var latitude = location.coords.latitude;
-  var longitude = location.coords.longitude;
-  console.log("you are here i think: [" + latitude + ", " + longitude + "]");
 
 
-  geoFire.set(username, [latitude, longitude]).then(function() {
-    console.log( username + " found");
-
-
-    firebaseRef.child(username).onDisconnect().remove();
-
-
-
-  });
-};
 
 
 
@@ -62,7 +41,49 @@ var geolocationCallback = function(location) {
         //... other options
     });
 
+
+
+    var getLocation = function() {
+      if (typeof navigator !== "undefined" && typeof navigator.geolocation !== "undefined") {
+      console.log("getting location");
+      navigator.geolocation.getCurrentPosition( geolocationCallback);
+      map.locate({setView: true, maxZoom: 16});
+    } else {
+        console.log("rats.")
+    }
+  };
+
+  var geolocationCallback = function(location) {
+    var latitude = location.coords.latitude;
+    var longitude = location.coords.longitude;
+    console.log("you are here i think: [" + latitude + ", " + longitude + "]");
+
+
+    geoFire.set(username, [latitude, longitude]).then(function() {
+      console.log( username + " found");
+
+
+      firebaseRef.child(username).onDisconnect().remove();
+
+
+
+    });
+  };
+
+  map.on('locationfound', onLocationFound);
+
+  function onLocationFound(e) {
+    var radius = e.accuracy * 5;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup( username + "'s position").openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+  }
+
     doMapThings();
+    // Get the current user's location
+    getLocation();
 
     function doMapThings(city) {
               var corner1 = L.latLng(-36.815135, 174.716778),
@@ -92,4 +113,4 @@ var geolocationCallback = function(location) {
     					}
   }
 
-});
+})();
