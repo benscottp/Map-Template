@@ -194,6 +194,33 @@ z-index: 999;
   height: 20em;
   width: 20em;
   border-radius: 20em;
+  position: relative;
+
+    &__stalk {
+      position: absolute;
+      width: 1em;
+      height: 4em;
+      bottom: -3.5em;
+      left: 2.5em;
+       border-bottom-left-radius: 2em;
+        border-bottom-right-radius: 2em;
+
+        &--food {
+              background: #37608E;
+        }
+
+        &--motel {
+          background-color: #128782;
+        }
+
+        &--scenic {
+          background-color: #F66F64;
+        }
+
+        &--saved {
+            background-color: #fcb148;
+        }
+    }
 
     &--food {
       background-color: #37608E;
@@ -235,7 +262,6 @@ z-index: 999;
           height: 4.6em;
           top: 0.5em;
           width: 6em;
-
       }
 
       &--saved {

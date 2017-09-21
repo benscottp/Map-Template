@@ -6123,7 +6123,24 @@ body {
 .mapIcon {
   height: 20em;
   width: 20em;
-  border-radius: 20em; }
+  border-radius: 20em;
+  position: relative; }
+  .mapIcon__stalk {
+    position: absolute;
+    width: 1em;
+    height: 4em;
+    bottom: -3.5em;
+    left: 2.5em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em; }
+    .mapIcon__stalk--food {
+      background: #37608E; }
+    .mapIcon__stalk--motel {
+      background-color: #128782; }
+    .mapIcon__stalk--scenic {
+      background-color: #F66F64; }
+    .mapIcon__stalk--saved {
+      background-color: #fcb148; }
   .mapIcon--food {
     background-color: #37608E; }
   .mapIcon--motel {
