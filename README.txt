@@ -30,6 +30,9 @@ to set it up to compile automatically run
  ~/node/bin/gulp sass:watch
 
 
+Command for browsersync on school computers
+
+~/node/bin/gulp default
 
 FOR ATOM
 
