@@ -31,7 +31,7 @@ gulp.task('serve', function(){
 		server: {
 			baseDir: './',
 		},
-    port: 8090
+    port: 8090;
 
 	})
 
