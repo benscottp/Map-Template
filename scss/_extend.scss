@@ -17,6 +17,7 @@ body {
 .frontpage-container {
   width: 100%;
   height: 100vh;
+  background-color: #FAFAFA;
 }
 
 
@@ -42,11 +43,15 @@ body {
   top: 45%;
 
     &__button {
-      border: 1px solid #000;
+      border: 2px solid #E0E1E2;
       width: 22em;
       margin: auto;
       height: 4em;
       display: flex;
+
+        &--thinBorder{
+        border-top: 0px;
+        }
     }
 
     &__link {
@@ -60,7 +65,7 @@ body {
       font-size: 1.25em;
        padding-top: 1em;
        padding-left: 1em;
-       flex: 0 0 88%;
+       flex: 0 0 85%;
        text-transform: uppercase;
     }
 
@@ -99,15 +104,47 @@ body {
       height: 2em;
       width: 3em;
       }
-
 }
 
 .footer {
-  position: absolute;
   width: 100%;
-  bottom: 0;
-  height: 6em;
-  border: 1px solid #000;
+  height: 5em;
+  display: flex;
+
+  &__block {
+    flex: 1 0 20%;
+  }
+
+  &__header {
+    font-size: 0.8em;
+    padding-left: 1em;
+    padding-top: 1em;
+}
+
+    &__icon {
+        background-size: cover;
+        height: 3em;
+        width: 4em;
+
+        &--motel {
+            mask-image: url(../img/bed.svg);
+            background-color: #128782;
+        }
+
+        &--food {
+          mask-image: url(../img/food.svg);
+          background-color: #37608E;
+        }
+
+        &--scenic{
+          mask-image: url(../img/camera.svg);
+          background-color: #F66F64;
+        }
+        &--saved {
+          mask-image: url(../img/star.svg);
+          background-color: #fcb148;
+        }
+    }
 }
 
 .hide {
@@ -116,5 +153,5 @@ body {
 
 #map {
   width: 100%;
-  height: 90vh;
+  height: 86.75vh;
 }
