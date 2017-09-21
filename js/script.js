@@ -20,12 +20,6 @@
   var geoFire = new GeoFire(firebaseRef);
 
 
-
-
-
-
-
-
   displayMap();
 
   function displayMap() {
@@ -118,3 +112,25 @@
   }
 
 })();
+
+
+var searchIcon = document.querySelector('.header__searchIcon');
+var searchBar = document.querySelector('.header__searchBar');
+searchIcon.addEventListener('click', displaySearch);
+
+let searchActive = 0;
+
+function displaySearch() {
+
+  if (!searchActive) {
+  searchIcon.classList.add('header__searchIcon--active')
+    searchBar.classList.add('header__searchBar--active')
+  searchActive = 1;
+  }
+
+  else if (searchActive) {
+    searchIcon.classList.remove('header__searchIcon--active')
+    searchBar.classList.remove('header__searchBar--active')
+    searchActive = 0;
+  }
+}
