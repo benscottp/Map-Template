@@ -103,7 +103,7 @@ z-index: 999;
       background-size: cover;
       position: absolute;
       top: -0.1em;
-      left: 85%;
+      left: 90%;
       height: 2em;
       width: 3em;
                 transition: all 0.5s ease-out;
@@ -122,9 +122,11 @@ z-index: 999;
     right: 2em;
     width: 50%;
     height: 2em;
+       transition: all 0.3s ease-in;
 
       &--active {
           background-color: #E6E6E6;
+           transition: all 0.3s ease-in;
       }
   }
 }
