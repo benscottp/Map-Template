@@ -1,4 +1,32 @@
 $(function(){
+
+
+  var config = {
+      apiKey: "AIzaSyDxiV9MhgYqV4VHwse-d94t0yikuvhtqtI",
+      authDomain: "scenic-spots.firebaseapp.com",
+      databaseURL: "https://scenic-spots.firebaseio.com",
+      projectId: "scenic-spots",
+      storageBucket: "scenic-spots.appspot.com",
+      messagingSenderId: "148448140954"
+    };
+    firebase.initializeApp(config);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var city;
 const version = '?v=20170901'
 const clientid = '&client_id=4HLUBBPKV5WMSV24VMTVWA44LVSV1TQENTFUNETMJRVZAPVH'
@@ -69,7 +97,7 @@ function doMapThings(city) {
 									// 			marker.getElement().style.backgroundImage = "url("+iconUrl+")";
                   //
 									// map.closePopup();
-                
+
 
 								});
 					}
