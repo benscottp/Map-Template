@@ -37,9 +37,13 @@
     var doneCities = [];
     var map = L.map("map", {
         zoomControl: false,
-        minZoom: 16
+        minZoom: 16,
+        attributionControl: false
         //... other options
     });
+
+
+
 
 
 
