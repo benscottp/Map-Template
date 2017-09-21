@@ -22,6 +22,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('js-watch', ['js'], function (done) {
+    reload;
     done();
 });
 
