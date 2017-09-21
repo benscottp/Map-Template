@@ -28,3 +28,10 @@ In order to use the Gulp to compile sass run in the terminal the following comma
 
 to set it up to compile automatically run
  ~/node/bin/gulp sass:watch
+
+
+
+FOR ATOM
+
+Using GIT Without needing login everytime
+ git config --global credential.helper osxkeychain
