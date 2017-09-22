@@ -1,6 +1,6 @@
 (function(){
 
-  var username = 'adrian';
+  var username = 'tamari';
 
 
 
@@ -36,29 +36,29 @@
         //... other options
     });
 
-var foodIcon = L.divIcon({
-  className: 'mapIcon mapIcon--food',
-  iconSize: [70, 70],
-  html: '<div class="mapIcon__stalk mapIcon__stalk--food"></div><div class="mapIcon__image mapIcon__image--food"></div>'
-});
+  var foodIcon = L.divIcon({
+    className: 'mapIcon mapIcon--food',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--food"></div><div class="mapIcon__image mapIcon__image--food"></div>'
+  });
 
-var motelIcon = L.divIcon({
-  className: 'mapIcon mapIcon--motel',
-  iconSize: [70, 70],
-  html: '<div class="mapIcon__stalk mapIcon__stalk--motel"></div><div class="mapIcon__image mapIcon__image--motel"></div>'
-});
+  var motelIcon = L.divIcon({
+    className: 'mapIcon mapIcon--motel',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--motel"></div><div class="mapIcon__image mapIcon__image--motel"></div>'
+  });
 
-var scenicIcon = L.divIcon({
-  className: 'mapIcon mapIcon--scenic',
-  iconSize: [70, 70],
-  html: '<div class="mapIcon__stalk mapIcon__stalk--scenic"></div><div class="mapIcon__image mapIcon__image--scenic"></div>'
-});
+  var scenicIcon = L.divIcon({
+    className: 'mapIcon mapIcon--scenic',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--scenic"></div><div class="mapIcon__image mapIcon__image--scenic"></div>'
+  });
 
-var savedIcon = L.divIcon({
-  className: 'mapIcon mapIcon--saved',
-  iconSize: [70, 70],
-  html: '<div class="mapIcon__stalk mapIcon__stalk--saved"></div><div class="mapIcon__image mapIcon__image--saved"></div>'
-});
+  var savedIcon = L.divIcon({
+    className: 'mapIcon mapIcon--saved',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--saved"></div><div class="mapIcon__image mapIcon__image--saved"></div>'
+  });
 
     var getLocation = function() {
       if (typeof navigator !== "undefined" && typeof navigator.geolocation !== "undefined") {
@@ -132,9 +132,14 @@ var savedIcon = L.divIcon({
 
 })();
 
+var nearbyLocation = document.querySelector('#nearby');
+nearbyLocation.addEventListener('click', changePage);
 
 var searchIcon = document.querySelector('.header__searchIcon');
 var searchBar = document.querySelector('.header__searchBar');
+
+var frontPage = document.querySelector('.frontpage-container');
+var mainPage = document.querySelector('.mainpage-container');
 searchIcon.addEventListener('click', displaySearch);
 
 let searchActive = 0;
@@ -152,4 +157,15 @@ function displaySearch() {
     searchBar.classList.remove('header__searchBar--active')
     searchActive = 0;
   }
+}
+
+function changePage() {
+    mainPage.classList.remove('hide');
+      frontPage.classList.add('translatex');
+      mainPage.classList.add('translatemain');
+
+    frontPage.addEventListener("transitionend", function(event) {
+  frontPage.classList.add('hide');
+}, false);
+
 }
