@@ -1,6 +1,6 @@
 (function(){
 
-  var username = 'adrian';
+  var username = 'tamari';
 
 
 
@@ -20,12 +20,6 @@
   var geoFire = new GeoFire(firebaseRef);
 
 
-
-
-
-
-
-
   displayMap();
 
   function displayMap() {
@@ -37,11 +31,34 @@
     var doneCities = [];
     var map = L.map("map", {
         zoomControl: false,
-        minZoom: 16
+        minZoom: 16,
+        attributionControl: false
         //... other options
     });
 
+  var foodIcon = L.divIcon({
+    className: 'mapIcon mapIcon--food',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--food"></div><div class="mapIcon__image mapIcon__image--food"></div>'
+  });
 
+  var motelIcon = L.divIcon({
+    className: 'mapIcon mapIcon--motel',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--motel"></div><div class="mapIcon__image mapIcon__image--motel"></div>'
+  });
+
+  var scenicIcon = L.divIcon({
+    className: 'mapIcon mapIcon--scenic',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--scenic"></div><div class="mapIcon__image mapIcon__image--scenic"></div>'
+  });
+
+  var savedIcon = L.divIcon({
+    className: 'mapIcon mapIcon--saved',
+    iconSize: [70, 70],
+    html: '<div class="mapIcon__stalk mapIcon__stalk--saved"></div><div class="mapIcon__image mapIcon__image--saved"></div>'
+  });
 
 
 
@@ -77,7 +94,7 @@
   function onLocationFound(e) {
     var radius = e.accuracy * 5;
 
-    L.marker(e.latlng).addTo(map)
+    L.marker((e.latlng),{icon:foodIcon}).addTo(map)
         .bindPopup( username + "'s position").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
@@ -94,7 +111,7 @@
                   corner2 = L.latLng(-36.912724, 174.816856),
                   bounds = L.latLngBounds(corner1, corner2);
 
-                map.setMaxBounds(bounds);
+                // map.setMaxBounds(bounds);
 
                   var lat = -36.848461
                   var lon = 174.763336
@@ -118,3 +135,41 @@
   }
 
 })();
+
+var nearbyLocation = document.querySelector('#nearby');
+nearbyLocation.addEventListener('click', changePage);
+
+var searchIcon = document.querySelector('.header__searchIcon');
+var searchBar = document.querySelector('.header__searchBar');
+
+var frontPage = document.querySelector('.frontpage-container');
+var mainPage = document.querySelector('.mainpage-container');
+searchIcon.addEventListener('click', displaySearch);
+
+let searchActive = 0;
+
+function displaySearch() {
+
+  if (!searchActive) {
+  searchIcon.classList.add('header__searchIcon--active')
+    searchBar.classList.add('header__searchBar--active')
+  searchActive = 1;
+  }
+
+  else if (searchActive) {
+    searchIcon.classList.remove('header__searchIcon--active')
+    searchBar.classList.remove('header__searchBar--active')
+    searchActive = 0;
+  }
+}
+
+function changePage() {
+    mainPage.classList.remove('hide');
+      frontPage.classList.add('translatex');
+      mainPage.classList.add('translatemain');
+
+    frontPage.addEventListener("transitionend", function(event) {
+  frontPage.classList.add('hide');
+}, false);
+
+}
