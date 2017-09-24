@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- Style Sheets -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
           <!-- Bootstrap -->
-          <link rel="stylesheet" href="css/bootstrap.css">
-
+    <link rel="stylesheet" href="css/bootstrap.css">
   <!-- Libraries -->
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/geofire/4.1.0/geofire.min.js"></script>
 
   <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script
@@ -29,9 +31,75 @@
             crossorigin="anonymous"></script>
 
 
-  <title>Document</title>
+  <title>MAPP</title>
 </head>
 <body>
+    <section class="frontpage-container container-fluid">
+        <div class="logo">
+          <div class="logo__img">
+
+          </div>
+
+          <h2 class="logo__header">your local tour guide</h2>
+        </div>
+
+        <div class="enter">
+          <div id="nearby" class="enter__button">
+                <h1 class="enter__header">Nearby Locations</h1>
+                <div class="enter__arrow"></div>
+          </div>
+          <div class="enter__button enter__button--thinBorder">
+            <h1 class="enter__header">Get Directions</h1>
+              <div class="enter__arrow"></div>
+          </div>
+        </div>
+
+    </section>
+
+    <section class="hide mainpage-container">
+        <div class="header">
+            <div class="header__logo"></div>
+            <div class="header__search">
+              <div class="header__searchBar">
+                <div class="header__searchIcon">
+
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+
+        <div class="footer">
+
+          <div class="footer__block">
+            <div class="footer__icon footer__icon--home"></div>
+              <h1 class="footer__header">Home</h1>
+          </div>
+
+          <div class="footer__block">
+            <div class="footer__icon footer__icon--motel"></div>
+              <h1 class="footer__header">Motel</h1>
+            </div>
+
+          <div class="footer__block">
+            <div class="footer__icon footer__icon--food"></div>
+                <h1 class="footer__header">Food</h1>
+          </div>
+
+          <div class="footer__block">
+            <div class="footer__icon footer__icon--scenic"></div>
+                <h1 class="footer__header">Scenic</h1>
+          </div>
+
+          <div class="footer__block">
+            <div class="footer__icon footer__icon--saved"></div>
+                <h1 class="footer__header">Saved</h1>
+          </div>
+        </div>
+    </section>
     <!-- Important stuff here-->
 
 
