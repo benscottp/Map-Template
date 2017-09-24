@@ -211,7 +211,7 @@ z-index: 998;
       position: absolute;
       width: 0.65em;
       height: 2.5em;
-      bottom: -2.1em;
+      bottom: -2.16em;
       left: 1.85em;
        border-bottom-left-radius: 2em;
         border-bottom-right-radius: 2em;
@@ -295,13 +295,13 @@ z-index: 998;
 
 .translatex {
     left: -100%;
-    transition: left 0.25s ease;
+    transition: left 0.30s ease;
 
 }
 
 .translatemain {
   right: 0%;
-  transition: right 0.25s ease;
+  transition: right 0.30s ease;
 
 }
 
