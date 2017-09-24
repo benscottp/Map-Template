@@ -43,6 +43,8 @@
 
 
 
+
+
     var getLocation = function() {
       if (typeof navigator !== "undefined" && typeof navigator.geolocation !== "undefined") {
       console.log("getting location");
@@ -82,8 +84,10 @@
   }
 
     doMapThings();
+
     // Get the current user's location
     getLocation();
+
 
     function doMapThings(city) {
               var corner1 = L.latLng(-36.815135, 174.716778),
