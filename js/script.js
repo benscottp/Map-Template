@@ -38,25 +38,29 @@
 
   var foodIcon = L.divIcon({
     className: 'mapIcon mapIcon--food',
-    iconSize: [70, 70],
+    iconSize: [50, 50],
+    iconAnchor: [25, 90],
     html: '<div class="mapIcon__stalk mapIcon__stalk--food"></div><div class="mapIcon__image mapIcon__image--food"></div>'
   });
 
   var motelIcon = L.divIcon({
     className: 'mapIcon mapIcon--motel',
-    iconSize: [70, 70],
+      iconSize: [50, 50],
+    iconAnchor: [25, 90],
     html: '<div class="mapIcon__stalk mapIcon__stalk--motel"></div><div class="mapIcon__image mapIcon__image--motel"></div>'
   });
 
   var scenicIcon = L.divIcon({
     className: 'mapIcon mapIcon--scenic',
-    iconSize: [70, 70],
+    iconSize: [50, 50],
+    iconAnchor: [25, 90],
     html: '<div class="mapIcon__stalk mapIcon__stalk--scenic"></div><div class="mapIcon__image mapIcon__image--scenic"></div>'
   });
 
   var savedIcon = L.divIcon({
     className: 'mapIcon mapIcon--saved',
-    iconSize: [70, 70],
+    iconSize: [50, 50],
+    iconAnchor: [25, 90],
     html: '<div class="mapIcon__stalk mapIcon__stalk--saved"></div><div class="mapIcon__image mapIcon__image--saved"></div>'
   });
 
@@ -92,7 +96,7 @@
   function onLocationFound(e) {
     var radius = e.accuracy * 5;
 
-    L.marker((e.latlng),{icon:foodIcon}).addTo(map)
+    L.marker((e.latlng),{icon:savedIcon}).addTo(map)
         .bindPopup( username + "'s position").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);

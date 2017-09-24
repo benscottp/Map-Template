@@ -4,11 +4,11 @@
 }
 
 @mixin mapMarker {
-  height: 5em;
-  width: 7em;
+  height: 4em;
+  width: 4em;
   background-color: #fff;
   position: absolute;
-  top: 0.3em;
+  top: 0.45em;
 }
 
 * {
@@ -209,10 +209,10 @@ z-index: 998;
 
     &__stalk {
       position: absolute;
-      width: 1em;
-      height: 4em;
-      bottom: -3.5em;
-      left: 2.5em;
+      width: 0.65em;
+      height: 2.5em;
+      bottom: -2.1em;
+      left: 1.85em;
        border-bottom-left-radius: 2em;
         border-bottom-right-radius: 2em;
 
@@ -258,27 +258,30 @@ z-index: 998;
       &--food {
         mask-image: url(../img/food.svg);
         -webkit-mask-image: url(../img/food.svg);
+              left: 0.185em;
+
       }
 
 
       &--motel {
         mask-image: url(../img/bed.svg);
         -webkit-mask-image: url(../img/bed.svg);
-        left: -0.185em;
+        left: 0.050em;
       }
 
       &--scenic {
         mask-image: url(../img/camera.svg);
           -webkit-mask-image: url(../img/camera.svg);
-          height: 4.6em;
+          height: 3em;
           top: 0.5em;
           width: 6em;
+          left: 0.20em;
       }
 
       &--saved {
         mask-image: url(../img/star.svg);
        -webkit-mask-image: url(../img/star.svg);
-       left: -0.1em;
+       left: 0.050em;
       }
 
   }
