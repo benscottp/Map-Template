@@ -45,28 +45,28 @@ const apiKey = version +clientid+ clientSecret;
   var foodIcon = L.divIcon({
     className: 'mapIcon mapIcon--food',
     iconSize: [50, 50],
-    iconAnchor: [25, 90],
+    iconAnchor:[50, 50],
     html: '<div class="mapIcon__stalk mapIcon__stalk--food"></div><div class="mapIcon__image mapIcon__image--food"></div>'
   });
 
   var motelIcon = L.divIcon({
     className: 'mapIcon mapIcon--motel',
       iconSize: [50, 50],
-    iconAnchor: [25, 90],
+      iconAnchor:[50, 50],
     html: '<div class="mapIcon__stalk mapIcon__stalk--motel"></div><div class="mapIcon__image mapIcon__image--motel"></div>'
   });
 
   var scenicIcon = L.divIcon({
     className: 'mapIcon mapIcon--scenic',
     iconSize: [50, 50],
-    iconAnchor: [25, 90],
+      iconAnchor:[50, 50],
     html: '<div class="mapIcon__stalk mapIcon__stalk--scenic"></div><div class="mapIcon__image mapIcon__image--scenic"></div>'
   });
 
   var savedIcon = L.divIcon({
     className: 'mapIcon mapIcon--saved',
     iconSize: [50, 50],
-    iconAnchor: [25, 90],
+        iconAnchor:[50, 50],
     html: '<div class="mapIcon__stalk mapIcon__stalk--saved"></div><div class="mapIcon__image mapIcon__image--saved"></div>'
   });
 
