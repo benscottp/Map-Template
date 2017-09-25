@@ -111,15 +111,14 @@ const apiKey = version +clientid+ clientSecret;
 
     let lat = e.latlng.lat
     let lng = e.latlng.lng
+
+        doMapThings(lat, lng);
   }
-
-    doMapThings(lat, lng);
-
     // Get the current user's location
     getLocation();
 
 
-    function doMapThings(city) {
+    function doMapThings(lat,lng) {
               var corner1 = L.latLng(-36.815135, 174.716778),
                   corner2 = L.latLng(-36.912724, 174.816856),
                   bounds = L.latLngBounds(corner1, corner2);
@@ -127,15 +126,23 @@ const apiKey = version +clientid+ clientSecret;
                 // map.setMaxBounds(bounds);
 
 
-    							var fetchVenues = fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lon + '&limit=50')
+    							var fetchFood= fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lng + '&query=Restaurant&limit=50')
     									.then(function(response){
     									return response.json();
     								});
 
-    								fetchVenues.then(function(response){
+                    var fetchHotels = fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lng + '&query=Hotel&limit=50')
+                        .then(function(response){
+                        return response.json();
+                      });
 
-    										var venues = response.response.venues;
-    										var center = [lat, lon];
+                      Promise.all([fetchFood, fetchHotels]).then(values => {
+                      let  foodvenues = values[0].response.venues;
+                  		let hotelvenues = values[1].response.venues;
+
+                      console.log(hotelvenues);
+    										var center = [lat, lng];
+
 
     										map.setView(center, 14);
 
