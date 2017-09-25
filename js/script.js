@@ -1,3 +1,9 @@
+const version = '?v=20170901'
+const clientid = '&client_id=4HLUBBPKV5WMSV24VMTVWA44LVSV1TQENTFUNETMJRVZAPVH'
+const clientSecret = '&client_secret=T0S3T3XZ5JKIJYI31QDPLPF5JVEWCGHWVNRLA1GUFN5ZVK0D'
+const apiKey = version +clientid+ clientSecret;
+
+
 (function(){
 
   var username = 'tamari';
@@ -102,9 +108,12 @@
         .bindPopup( username + "'s position").openPopup();
 
     L.circle(e.latlng, radius).addTo(map);
+
+    let lat = e.latlng.lat
+    let lng = e.latlng.lng
   }
 
-    doMapThings();
+    doMapThings(lat, lng);
 
     // Get the current user's location
     getLocation();
@@ -117,8 +126,7 @@
 
                 // map.setMaxBounds(bounds);
 
-                  var lat = -36.848461
-                  var lon = 174.763336
+
     							var fetchVenues = fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lon + '&limit=50')
     									.then(function(response){
     									return response.json();
