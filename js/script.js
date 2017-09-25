@@ -1,3 +1,9 @@
+const version = '?v=20170901'
+const clientid = '&client_id=4HLUBBPKV5WMSV24VMTVWA44LVSV1TQENTFUNETMJRVZAPVH'
+const clientSecret = '&client_secret=T0S3T3XZ5JKIJYI31QDPLPF5JVEWCGHWVNRLA1GUFN5ZVK0D'
+const apiKey = version +clientid+ clientSecret;
+
+
 (function(){
 
   var username = 'tamari';
@@ -36,33 +42,33 @@
         //... other options
     });
 
-  var foodIcon = L.divIcon({
-    className: 'mapIcon mapIcon--food',
-    iconSize: [50, 50],
-    iconAnchor: [25, 90],
-    html: '<div class="mapIcon__stalk mapIcon__stalk--food"></div><div class="mapIcon__image mapIcon__image--food"></div>'
-  });
-
-  var motelIcon = L.divIcon({
-    className: 'mapIcon mapIcon--motel',
+    var foodIcon = L.divIcon({
+      className: 'mapIcon mapIcon--food',
       iconSize: [50, 50],
-    iconAnchor: [25, 90],
-    html: '<div class="mapIcon__stalk mapIcon__stalk--motel"></div><div class="mapIcon__image mapIcon__image--motel"></div>'
-  });
+      iconAnchor: [25, 90],
+      html: '<div class="mapIcon__stalk mapIcon__stalk--food"></div><div class="mapIcon__image mapIcon__image--food"></div>'
+    });
 
-  var scenicIcon = L.divIcon({
-    className: 'mapIcon mapIcon--scenic',
-    iconSize: [50, 50],
-    iconAnchor: [25, 90],
-    html: '<div class="mapIcon__stalk mapIcon__stalk--scenic"></div><div class="mapIcon__image mapIcon__image--scenic"></div>'
-  });
+    var motelIcon = L.divIcon({
+      className: 'mapIcon mapIcon--motel',
+        iconSize: [50, 50],
+      iconAnchor: [25, 90],
+      html: '<div class="mapIcon__stalk mapIcon__stalk--motel"></div><div class="mapIcon__image mapIcon__image--motel"></div>'
+    });
 
-  var savedIcon = L.divIcon({
-    className: 'mapIcon mapIcon--saved',
-    iconSize: [50, 50],
-    iconAnchor: [25, 90],
-    html: '<div class="mapIcon__stalk mapIcon__stalk--saved"></div><div class="mapIcon__image mapIcon__image--saved"></div>'
-  });
+    var scenicIcon = L.divIcon({
+      className: 'mapIcon mapIcon--scenic',
+      iconSize: [50, 50],
+      iconAnchor: [25, 90],
+      html: '<div class="mapIcon__stalk mapIcon__stalk--scenic"></div><div class="mapIcon__image mapIcon__image--scenic"></div>'
+    });
+
+    var savedIcon = L.divIcon({
+      className: 'mapIcon mapIcon--saved',
+      iconSize: [50, 50],
+      iconAnchor: [25, 90],
+      html: '<div class="mapIcon__stalk mapIcon__stalk--saved"></div><div class="mapIcon__image mapIcon__image--saved"></div>'
+    });
 
 
 
@@ -87,7 +93,6 @@
 
 
       firebaseRef.child(username).onDisconnect().remove();
-
 
 
     });
@@ -117,8 +122,6 @@
 
                 // map.setMaxBounds(bounds);
 
-                  var lat = -36.848461
-                  var lon = 174.763336
     							var fetchVenues = fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lon + '&limit=50')
     									.then(function(response){
     									return response.json();
