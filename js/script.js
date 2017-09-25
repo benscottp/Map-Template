@@ -126,12 +126,12 @@ const apiKey = version +clientid+ clientSecret;
                 // map.setMaxBounds(bounds);
 
 
-    							var fetchFood= fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lng + '&query=Restaurant&limit=50')
+    							var fetchFood= fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lng + '&query=Restaurant&limit=5')
     									.then(function(response){
     									return response.json();
     								});
 
-                    var fetchHotels = fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lng + '&query=Hotel&limit=50')
+                    var fetchHotels = fetch('https://api.foursquare.com/v2/venues/search' + apiKey+'&ll='+ lat + ',' + lng + '&query=Hotel&limit=5')
                         .then(function(response){
                         return response.json();
                       });
@@ -143,11 +143,20 @@ const apiKey = version +clientid+ clientSecret;
                       console.log(hotelvenues);
     										var center = [lat, lng];
 
-
     										map.setView(center, 14);
 
     										L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmFpdnZpIiwiYSI6ImNqNmxncmoyMjFyZGMyeG1xN3Yyejk4dHIifQ.O7Bby6q1Jbn8v9ANa4_P5w', {foo: 'bar'}).addTo(map);
     										L.circle(center, {radius: 2500, fill: false, color: '#000'}).addTo(map);
+
+                        for (let i = 0; i < foodvenues.length; i++) {
+                    	      let venuelocation = [foodvenues[i].location.lat, foodvenues[i].location.lng];
+                          let marker = L.marker(venuelocation, {icon:foodIcon}).addTo(map);
+                        }
+
+                      for (let i = 0; i <  hotelvenues.length; i++) {
+                  	      let venuelocation = [ hotelvenues[i].location.lat, hotelvenues[i].location.lng];
+                        let marker = L.marker(venuelocation, {icon:motelIcon}).addTo(map);
+                      }
 
     								});
     					}
