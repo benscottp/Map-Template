@@ -38,7 +38,7 @@ gulp.task('serve', function(){
 
 	gulp.watch('./scss/**/*.scss', ['sass'])
   gulp.watch('./js/**/*.js', ['js-watch'])
-	gulp.watch('index.html').on('change', reload)
+	gulp.watch('index.html').on('change', reload)//hi
 
 
 });
